@@ -25,22 +25,8 @@ jobs:
       -
         name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v1
-        builds:
-            env:
-                - CGO_ENABLED=0
-            goos:
-                - linux
-                - windows
-            goarch:
-                - amd64
-                - arm
-                - arm64
-            goarm:
-                - 6
-                - 7
         with:
           version: latest
           args: release --rm-dist
-          key: ${{ secrets.YOUR_PRIVATE_KEY }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
