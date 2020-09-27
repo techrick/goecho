@@ -21,5 +21,10 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World or not!")
 	})
+	
+	e.GET("/ping", func(c echo.Context) error {
+		return c.String(http.StatusOK, "pong")
+	})
+	
 	e.Logger.Fatal(e.Start(":1323"))
 }
